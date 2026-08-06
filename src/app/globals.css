@@ -1,0 +1,406 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ENGINEERING WORKSPACE — SEMANTIC COLOR SYSTEM
+   Every color carries domain meaning. No arbitrary accents.
+   ============================================================ */
+
+:root {
+  --background: #050507;
+  --foreground: #e4e4e7;
+
+  --font-title: var(--font-outfit), sans-serif;
+  --font-body: var(--font-body), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  /* Semantic Domain Colors */
+  --color-backend:      #34d399;
+  --color-backend-dim:  rgba(52, 211, 153, 0.12);
+  --color-backend-glow: rgba(52, 211, 153, 0.25);
+
+  --color-ai:           #22d3ee;
+  --color-ai-dim:       rgba(34, 211, 238, 0.12);
+  --color-ai-glow:      rgba(34, 211, 238, 0.25);
+
+  --color-ml:           #a78bfa;
+  --color-ml-dim:       rgba(167, 139, 250, 0.12);
+  --color-ml-glow:      rgba(167, 139, 250, 0.25);
+
+  --color-deploy:       #fbbf24;
+  --color-deploy-dim:   rgba(251, 191, 36, 0.12);
+  --color-deploy-glow:  rgba(251, 191, 36, 0.25);
+
+  --color-data:         #2dd4bf;
+  --color-data-dim:     rgba(45, 212, 191, 0.12);
+  --color-data-glow:    rgba(45, 212, 191, 0.25);
+
+  --color-arch:         #818cf8;
+  --color-arch-dim:     rgba(129, 140, 248, 0.12);
+  --color-arch-glow:    rgba(129, 140, 248, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   ENGINEERING CANVAS BACKGROUNDS
+   ============================================================ */
+
+.bg-topology-dots {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-grid-fine {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ============================================================
+   WORKSPACE SURFACE PANELS
+   ============================================================ */
+
+.workspace-surface {
+  background: rgba(8, 8, 12, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.workspace-surface:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Engineering panel with precision corner marks */
+.engineering-panel {
+  position: relative;
+  background: rgba(6, 6, 9, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.engineering-panel::before,
+.engineering-panel::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+.engineering-panel::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid rgba(255,255,255,0.22);
+  border-left: 1.5px solid rgba(255,255,255,0.22);
+}
+
+.engineering-panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1.5px solid rgba(255,255,255,0.22);
+  border-right: 1.5px solid rgba(255,255,255,0.22);
+}
+
+/* ============================================================
+   SEMANTIC DOMAIN TECH TAGS
+   ============================================================ */
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  transition: all 0.18s ease;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.tech-tag-backend {
+  background: var(--color-backend-dim);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: var(--color-backend);
+}
+.tech-tag-backend:hover, .tech-tag-backend.active {
+  background: rgba(52, 211, 153, 0.18);
+  border-color: var(--color-backend);
+  box-shadow: 0 0 10px var(--color-backend-glow);
+}
+
+.tech-tag-ai {
+  background: var(--color-ai-dim);
+  border-color: rgba(34, 211, 238, 0.3);
+  color: var(--color-ai);
+}
+.tech-tag-ai:hover, .tech-tag-ai.active {
+  background: rgba(34, 211, 238, 0.18);
+  border-color: var(--color-ai);
+  box-shadow: 0 0 10px var(--color-ai-glow);
+}
+
+.tech-tag-ml {
+  background: var(--color-ml-dim);
+  border-color: rgba(167, 139, 250, 0.3);
+  color: var(--color-ml);
+}
+.tech-tag-ml:hover, .tech-tag-ml.active {
+  background: rgba(167, 139, 250, 0.18);
+  border-color: var(--color-ml);
+  box-shadow: 0 0 10px var(--color-ml-glow);
+}
+
+.tech-tag-deploy {
+  background: var(--color-deploy-dim);
+  border-color: rgba(251, 191, 36, 0.3);
+  color: var(--color-deploy);
+}
+.tech-tag-deploy:hover, .tech-tag-deploy.active {
+  background: rgba(251, 191, 36, 0.18);
+  border-color: var(--color-deploy);
+  box-shadow: 0 0 10px var(--color-deploy-glow);
+}
+
+.tech-tag-data {
+  background: var(--color-data-dim);
+  border-color: rgba(45, 212, 191, 0.3);
+  color: var(--color-data);
+}
+.tech-tag-data:hover, .tech-tag-data.active {
+  background: rgba(45, 212, 191, 0.18);
+  border-color: var(--color-data);
+  box-shadow: 0 0 10px var(--color-data-glow);
+}
+
+.tech-tag-arch {
+  background: var(--color-arch-dim);
+  border-color: rgba(129, 140, 248, 0.3);
+  color: var(--color-arch);
+}
+.tech-tag-arch:hover, .tech-tag-arch.active {
+  background: rgba(129, 140, 248, 0.18);
+  border-color: var(--color-arch);
+  box-shadow: 0 0 10px var(--color-arch-glow);
+}
+
+/* ============================================================
+   TERMINAL STYLING
+   ============================================================ */
+
+.terminal-surface {
+  background: #020204;
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  font-family: var(--font-mono);
+}
+
+.terminal-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 2px 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(228, 228, 231, 0.65);
+  line-height: 1.6;
+}
+
+.terminal-prompt {
+  color: var(--color-backend);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.terminal-input-field {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(52, 211, 153, 0.25);
+  outline: none;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 0;
+  width: 100%;
+  transition: border-color 0.2s ease;
+  caret-color: var(--color-backend);
+}
+
+.terminal-input-field:focus {
+  border-bottom-color: var(--color-backend);
+}
+
+.terminal-input-field::placeholder {
+  color: rgba(228, 228, 231, 0.2);
+  font-style: italic;
+}
+
+/* ============================================================
+   TOPOLOGY ANIMATIONS
+   ============================================================ */
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.4); }
+}
+
+@keyframes annotation-drift {
+  0% { transform: translateY(0px); opacity: 0.035; }
+  50% { opacity: 0.065; }
+  100% { transform: translateY(-28px); opacity: 0.035; }
+}
+
+@keyframes topology-line-drift {
+  0% { transform: translateX(0) translateY(0); opacity: 0.04; }
+  100% { transform: translateX(-30px) translateY(15px); opacity: 0.04; }
+}
+
+@keyframes signal-flow {
+  to { stroke-dashoffset: -200; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================================
+   3D PERSPECTIVE UTILITIES
+   ============================================================ */
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+.transform-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ============================================================
+   BLUEPRINT SECTION TRACES
+   ============================================================ */
+
+.section-trace {
+  width: 1px;
+  height: 64px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.07) 30%, rgba(255,255,255,0.07) 70%, transparent);
+  margin: 0 auto;
+}
+
+/* ============================================================
+   PRECISION SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16161f;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22222e;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Engineering Blueprint Grid Pattern */
+.bg-grid-blueprint {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-grid-blueprint-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
+/* Glassmorphic Panel Borders */
+.workspace-card {
+  background: rgba(8, 9, 14, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.workspace-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Custom Obsidian Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030304;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #181920;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #242632;
+}
+
+/* 3D Split Flap Board Utilities */
+.perspective-dramatic {
+  perspective: 1200px;
+}
+.transform-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

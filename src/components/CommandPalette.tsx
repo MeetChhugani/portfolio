@@ -5,7 +5,6 @@ import { Command } from "cmdk";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Search, 
-  Terminal, 
   Download, 
   FolderGit2, 
   Cpu, 
@@ -78,17 +77,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 No matching results found.
               </Command.Empty>
 
-              <Command.Group heading="PERSISTENT ROLE TOGGLE" className="text-[0.6rem] font-bold text-zinc-500 uppercase px-2 mb-1">
-                <Command.Item
-                  onSelect={() => { setRole("hybrid"); onClose(); }}
-                  className="flex items-center justify-between p-2.5 rounded-xl cursor-pointer hover:bg-zinc-900 hover:text-emerald-400 text-zinc-300 transition-colors"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <Terminal className="w-4 h-4 text-emerald-400" />
-                    <span>⚡ Dual (Systems & Data Engineer Mode)</span>
-                  </div>
-                  <span className="text-[0.55rem] text-zinc-500 uppercase">DEFAULT</span>
-                </Command.Item>
+              <Command.Group heading="ROLE PRIORITIZATION" className="text-[0.6rem] font-bold text-zinc-500 uppercase px-2 mb-1">
 
                 <Command.Item
                   onSelect={() => { setRole("backendDev"); onClose(); }}

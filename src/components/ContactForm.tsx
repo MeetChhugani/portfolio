@@ -89,7 +89,7 @@ export const ContactForm: React.FC = () => {
       <div className="flex items-center gap-3 border-b border-zinc-850 pb-4 mb-6">
         <Terminal className={`w-5 h-5 ${iconColor}`} />
         <span className="font-mono text-[0.65rem] text-zinc-500 tracking-[3px] uppercase">
-          SMTP_CONVERSATIONAL_PROTOCOL // DIRECT_MESSAGE_DISPATCH
+          A DIRECT MESSAGE TO MEET
         </span>
       </div>
 
@@ -192,7 +192,7 @@ export const ContactForm: React.FC = () => {
               className={`flex items-center justify-center gap-3 disabled:opacity-50 text-white font-mono text-xs font-bold px-6 py-3.5 rounded-xl self-end mt-2 shadow-lg cursor-pointer transition-colors ${submitButtonClass}`}
             >
               <Send className="w-4 h-4" />
-              <span>{status === "sending" ? "DISPATCHING EMAIL..." : "TRANSMIT EMAIL ENVELOPE"}</span>
+              <span>{status === "sending" ? "SENDING..." : "SEND MESSAGE"}</span>
             </button>
             
           </motion.form>

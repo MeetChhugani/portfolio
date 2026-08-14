@@ -7,21 +7,14 @@ import { RoleType } from "@/data/contentByRole";
 
 interface RoleTogglePillProps {
   className?: string;
-  variant?: "header" | "hero";
 }
 
 export const RoleTogglePill: React.FC<RoleTogglePillProps> = ({ 
-  className = "",
-  variant = "header"
+  className = ""
 }) => {
   const { role, setRole } = useRole();
 
   const options: { id: RoleType; label: string; emoji: string }[] = [
-    {
-      id: "hybrid",
-      label: "Dual (Systems & Data)",
-      emoji: "⚡",
-    },
     {
       id: "backendDev",
       label: "Python Backend Developer",
@@ -34,8 +27,8 @@ export const RoleTogglePill: React.FC<RoleTogglePillProps> = ({
     },
   ];
 
-  const activeColor = role === "backendDev" ? "text-sky-300" : role === "dataScience" ? "text-purple-300" : "text-emerald-300";
-  const glowBorder = role === "backendDev" ? "border-sky-500/40" : role === "dataScience" ? "border-purple-500/40" : "border-emerald-500/40";
+  const activeColor = role === "backendDev" ? "text-emerald-300" : "text-cyan-300";
+  const glowBorder = role === "backendDev" ? "border-emerald-500/40" : "border-cyan-500/40";
 
   return (
     <div className={`relative flex items-center bg-[#07070a]/90 border border-zinc-800/90 rounded-xl p-1 font-mono text-[0.68rem] tracking-wider select-none shadow-xl ${className}`}>

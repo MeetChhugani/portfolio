@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Outfit, Plus_Jakarta_Sans, Share_Tech_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { RoleProvider } from "@/context/RoleContext";
 import CarBackground from "@/components/car/CarBackground";
 
-const outfit = Outfit({
+const outfit = Space_Grotesk({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const plusJakarta = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const shareTech = Share_Tech_Mono({
+const shareTech = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400"],
@@ -96,7 +96,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -104,6 +104,7 @@ export default function RootLayout({
         />
       </head>
       <body
+        suppressHydrationWarning
         className={`${outfit.variable} ${plusJakarta.variable} ${shareTech.variable} antialiased selection:bg-emerald-500/20 selection:text-emerald-300`}
       >
         <CarBackground />

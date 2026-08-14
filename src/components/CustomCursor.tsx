@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRole } from "@/context/RoleContext";
-import { getDomainColors } from "@/components/TechTag";
 
 const DOMAIN_CURSOR_COLORS: Record<string, string> = {
   backend: "#34d399",
@@ -23,6 +22,7 @@ const CustomCursor: React.FC = () => {
   const [hoverLabel, setHoverLabel] = useState<string | null>(null);
   const [hovered, setHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const visibleRef = useRef(false);
 
   // Smooth outer ring — spring-damped
   const springConfig = { damping: 32, stiffness: 280, mass: 0.5 };
@@ -41,7 +41,7 @@ const CustomCursor: React.FC = () => {
       rawY.current = e.clientY;
       labelX.set(e.clientX + 18);
       labelY.set(e.clientY + 14);
-      if (!isVisible) setIsVisible(true);
+      if (!visibleRef.current) { visibleRef.current = true; setIsVisible(true); }
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -61,8 +61,8 @@ const CustomCursor: React.FC = () => {
       }
     };
 
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
+    const handleMouseLeave = () => { visibleRef.current = false; setIsVisible(false); };
+    const handleMouseEnter = () => { visibleRef.current = true; setIsVisible(true); };
 
     window.addEventListener("mousemove", moveCursor, { passive: true });
     window.addEventListener("mouseover", handleMouseOver, { passive: true });
@@ -75,7 +75,7 @@ const CustomCursor: React.FC = () => {
       document.documentElement.removeEventListener("mouseleave", handleMouseLeave);
       document.documentElement.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, [cursorX, cursorY, labelX, labelY, isVisible]);
+  }, [cursorX, cursorY, labelX, labelY]);
 
   // Semantic color based on domain
   const domainColor = hoveredDomain

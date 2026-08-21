@@ -78,105 +78,114 @@ export const contentByRole: Record<RoleType, RoleContent> = {
     },
     hero: {
       title: "Python Backend Developer",
-      subtitle: "Building scalable backend systems, APIs and automation tools using modern Python technologies.",
-      description: "Focused on designing reliable backend architectures, REST APIs, databases and production-ready software.",
+      subtitle: "Building scalable backend systems, APIs, microservices, and applied ML pipelines using modern Python & AWS.",
+      description: "Focused on designing reliable backend architectures, REST APIs, databases, vector stores, and production-oriented ML workflows.",
       taglinePrefix: "I am ",
-      rolesList: ["Python Backend Developer", "FastAPI Engineer", "API System Architect"],
+      rolesList: ["Python Backend Developer", "FastAPI & REST Engineer", "Machine Learning & API Architect"],
     },
     about: {
-      headline: "Building clean, scalable Python backend systems.",
-      bio: "Final-year B.Tech IT student specializing in Python backend architecture, FastAPI async microservices, PostgreSQL schema design, Redis caching, Docker containerization, and REST API design.",
+      headline: "Building clean, production-oriented Python backend systems & ML workflows.",
+      bio: "Final-year B.Tech Information Technology student specializing in Python backend architecture, FastAPI REST microservices, PostgreSQL/MySQL database schemas, ChromaDB vector search, AWS infrastructure, and production ML pipelines.",
       stackCategoryOrder: [
-        "LANGUAGES",
-        "TOOLS & FRAMEWORKS",
-        "DATA ANALYTICS",
+        "PROGRAMMING",
+        "BACKEND / CLOUD",
         "MACHINE LEARNING",
-        "ARTIFICIAL INTELLIGENCE",
+        "NLP / INFORMATION RETRIEVAL",
+        "COMPUTER VISION",
       ],
     },
     currentFocus: {
       items: [
         "FastAPI",
-        "Django",
-        "Docker",
-        "PostgreSQL",
-        "Redis",
-        "Celery",
-        "Authentication",
-        "JWT",
-        "Async Python",
-        "System Design",
-        "Microservices",
+        "Python",
         "REST APIs",
-        "Testing",
-        "CI/CD",
-        "GitHub Actions",
-        "Linux",
+        "AWS",
+        "PostgreSQL",
+        "MySQL",
+        "ChromaDB",
+        "MLflow",
+        "PyTorch",
+        "Scikit-learn",
+        "XGBoost",
+        "RAG",
+        "Docker",
+        "Git",
+        "Streamlit",
       ],
     },
     roadmap: {
       steps: [
-        { step: "01", label: "Python", desc: "Core async I/O, OOP principles & scripting" },
-        { step: "02", label: "FastAPI", desc: "High-performance REST API routing & Pydantic V2" },
-        { step: "03", label: "Docker", desc: "Multi-stage container builds & Compose networking" },
-        { step: "04", label: "Redis", desc: "Caching layers, token rotation & rate limiting" },
-        { step: "05", label: "Celery", desc: "Asynchronous task queue & background workers" },
-        { step: "06", label: "Microservices", desc: "Decoupled domain architectures & gRPC/REST APIs" },
-        { step: "07", label: "Kubernetes", desc: "Cluster orchestration & automated scaling", isFuture: true },
+        { step: "01", label: "Python & SQL", desc: "Core async I/O, OOP principles & database query optimization" },
+        { step: "02", label: "FastAPI REST APIs", desc: "High-performance REST API routing & async microservices" },
+        { step: "03", label: "Databases & RAG", desc: "PostgreSQL, MySQL, and ChromaDB vector search retrieval" },
+        { step: "04", label: "ML & MLflow", desc: "XGBoost, PyTorch, SMOTE, and MLflow experiment tracking" },
+        { step: "05", label: "Computer Vision & Audio", desc: "MediaPipe (468 facial points) & Web Audio API spectrograms" },
+        { step: "06", label: "Cloud & Ops", desc: "AWS deployment, Streamlit cloud serving, and CI/CD pipelines" },
+        { step: "07", label: "Microservices & Orchestration", desc: "Distributed vector orchestration & cloud scaling", isFuture: true },
       ],
     },
-    projectOrder: ["businessos", "attrition", "quizlab", "interview", "sentiment", "startup"],
+    projectOrder: ["attrition", "quizlab", "interview", "businessos", "sentiment", "startup"],
     skillsCategoryOrder: ["programming", "deploy", "cloud", "ml", "viz"],
     resume: {
-      title: "Python Developer Summary",
+      title: "Python Developer Resume",
       rawSummaryText: `MEET CHHUGANI
-Python Developer
-GitHub: MeetChhugani | LinkedIn: meet-chhugani | meetchhugani81@gmail.com | +91-7862806190 | Gujarat, India
+Machine Learning Engineer | NLP, Computer Vision & ML
++91-7862806190 | Gujarat, India | meetchhugani81@gmail.com | Portfolio: meetchhugani.vercel.app | GitHub: github.com/MeetChhugani | LinkedIn: linkedin.com/in/meet-chhugani
 
-SUMMARY:
-Final-year B.Tech Information Technology student with backend development experience in Python, Django, and FastAPI, including REST API design and third-party API integration (Groq LLaMA). Built and deployed six Python applications covering backend logic, data pipelines, and service integration, with additional applied experience in Machine Learning (Scikit-learn, XGBoost) and data analytics. Comfortable owning a service from API design through deployment.
+PROFESSIONAL SUMMARY:
+Final-year Information Technology student focused on applied machine learning for NLP, computer vision, and document intelligence. Built end-to-end ML systems using Python, Scikit-learn, PyTorch, and XGBoost, including RAG pipelines and multimodal interview analysis. Experienced in FastAPI, Streamlit, AWS, MLflow, and vector databases for experiment tracking, deployment, and production-oriented ML workflows.
+
+TECHNICAL SKILLS:
+• PROGRAMMING: Python, SQL
+• MACHINE LEARNING: Scikit-learn, PyTorch, XGBoost, Predictive Modeling, Classification, Regression, Feature Engineering, Model Evaluation, Model Tuning
+• NLP / INFORMATION RETRIEVAL: NLP, OCR, Information Extraction, RAG, Embeddings, Sentence Transformers, Semantic Retrieval, Semantic Search, Document Processing
+• COMPUTER VISION: OpenCV, MediaPipe, Computer Vision, Image Processing
+• ML ENGINEERING: MLflow, Experiment Tracking, Model Training, Model Inference, Model Evaluation, Model Deployment, ML Lifecycle
+• BACKEND / CLOUD: FastAPI, REST APIs, AWS
+• DATABASES: PostgreSQL, MySQL, ChromaDB
+• DATA / TOOLS: Pandas, NumPy, Data Preprocessing, Data Analysis, Git, GitHub, Jupyter Notebook, Streamlit
 
 EXPERIENCE:
-- Python & Django Developer Intern – Brainybeam Info-Tech Pvt. Ltd. (Jun 2025 – Jul 2025)
-  • Developed backend modules and database-driven features for production Django applications.
-  • Debugged and tested existing codebases, identifying and resolving functional defects before release.
-  • Implemented new application features end-to-end, from requirement to deployment-ready code.
 - Data Analytics Intern – iStudio (Jan 2026 – Feb 2026)
-  • Wrote SQL queries and Python scripts to clean and preprocess multi-source datasets for reporting pipelines.
-  • Built data processing workflows and dashboards, translating raw data into structured business reporting.
-  • Supported recurring stakeholder reporting cycles using SQL and Excel-based analysis.
+  • Built Python data engineering pipelines and ETL processes to validate, clean, and structure raw transaction datasets, yielding a ~25% runtime-error reduction.
+  • Performed exploratory data analysis (EDA) and statistical modeling utilizing SQL, Pandas, and NumPy to identify patterns and resolve operational problems.
+  • Collaborated in cross-functional teams to document database processes and translate complex analytical insights into structured reports.
+- Python with Django Intern – Brainybeam Info-Tech Pvt. Ltd. (Jun 2025 – Jul 2025)
+  • Developed modular Python backend components and database schemas, implementing Django REST Framework endpoints for web application workflows.
+  • Automated testing, systematic debugging, and backend query optimization, achieving a ~30% response-time improvement in data processing.
+  • Utilized Git version control across multi-person development environments and generated developer-facing technical documentation.
 
 PROJECTS:
-- Employee Risk Radar (Python, XGBoost, SHAP, Streamlit, Groq API)
-  • Built an application backend integrating a trained XGBoost model with a Groq LLaMA chatbot, designing the data flow between model inference, SHAP explainability output, and the chatbot response layer.
-  • Applied SHAP for model explainability, surfacing individual attrition risk drivers for HR decision-makers.
-- QuizLab (Python, Streamlit, LLMs, OCR, NLP)
-  • Interactive learning application parsing document arrays into JSON flashcard decks.
-- AI BusinessOS – Enterprise AI ERP Platform (Python, FastAPI, PostgreSQL, Redis, Docker, JWT)
-  • Architected a modular AI-powered ERP platform with 8 business modules: HR, CRM, Finance, Inventory, Analytics, Platform Services, and AI Copilot.
-  • Built 100+ RESTful APIs using FastAPI, implementing JWT authentication, RBAC, audit logging, and background job processing.
-  • Designed normalized relational schemas in PostgreSQL using SQLAlchemy and Alembic.
-- AI-Powered Mock Interview Analyzer (Flutter, Python, FastAPI, MediaPipe, NLP)
-  • Designed and built a FastAPI backend serving real-time speech, posture, and facial-expression analysis endpoints.
-- Fintech Sentiment Analyzer (Python, NLP, Streamlit, Groq API)
-  • Built a data pipeline ingesting and processing 3,000+ financial news headlines against NSE/BSE price data.
-
-SKILLS:
-- Languages: Python, SQL, TypeScript
-- Backend & APIs: FastAPI, Django, REST API Design, JWT Authentication, RBAC, SQLAlchemy
-- Databases: PostgreSQL, Redis, SQL, Alembic
-- Machine Learning: Scikit-learn, XGBoost, SHAP, NLP, RAG
-- DevOps & Tools: Docker, Git, GitHub, Streamlit, React
+- Employee Risk Radar | ML Prediction & Experimentation (Python, Scikit-learn, XGBoost, PyTorch, MLflow, SHAP, Streamlit)
+  • Developed an employee attrition prediction pipeline evaluating 1,470 employee samples across 30 feature variables using Python, Scikit-learn, XGBoost, and PyTorch.
+  • Addressed severe class imbalance using SMOTE and classification-threshold optimization, achieving a 0.89 ROC-AUC score.
+  • Used MLflow for experiment tracking, recording model parameters, evaluation metrics, and artifacts across training experiments.
+  • Applied SHAP-based local feature attribution across key predictor variables and deployed the interactive ML workflow on Streamlit.
+- QuizLab | RAG-Powered AI Learning & Information Retrieval Platform (Python, Streamlit, RAG, ChromaDB, Sentence Transformers, Groq, NLP, OCR)
+  • Built a RAG-powered document intelligence pipeline that converts uploaded PDFs into searchable vector knowledge using PyMuPDF text extraction, chunking, Sentence Transformer embeddings, and ChromaDB storage.
+  • Implemented semantic and metadata-aware retrieval to ground Groq LLM responses in document context, maintaining a 3-state adaptive difficulty state machine executing evaluation logic in under 50ms.
+  • Added document hashing, source references, persistent vector storage, and configurable retrieval parameters to improve retrieval consistency, reusability, and scalability.
+- AI-Powered Mock Interview Analyzer | Computer Vision & Career Recommendation (Python, FastAPI, OpenCV, MediaPipe, NLP, Recommendation Systems, AWS)
+  • Engineered a multimodal interview analysis pipeline utilizing MediaPipe face mesh landmarks (468 points) and Web Audio API spectrogram analysis, processing real-time audio streams under 150ms latency.
+  • Developed scoring workflows analyzing posture stability, speech tempo (WPM), and technical keyword density to generate structured candidate performance feedback.
+  • Implemented a recommendation system that analyzes candidate profiles and recommends suitable companies based on relevant matching criteria.
+  • Built asynchronous FastAPI REST APIs for interview analysis and candidate profiling, with AWS-based deployment/infrastructure.
 
 EDUCATION:
-- 2023 – May 2026: Bachelor of Technology, Information Technology | Gyanmanjari Innovative University, Bhavnagar, Gujarat`.trim(),
+- Gyanmanjari Innovative University, Bhavnagar, Gujarat (Expected Graduation: 2027)
+  Bachelor of Technology in Information Technology
+
+CERTIFICATIONS:
+• Machine Learning Specialization – DeepLearning.AI & Stanford | • IBM Data Science Professional Certificate
+• Google Advanced Data Analytics Professional Certificate | • Python for Data Science, AI & Development – IBM
+• Deloitte Data Analytics Virtual Experience | • Green Skills & AI Foundation Program`.trim(),
       tabLabels: {
         experience: "Work Experience",
         projects: "Selected Projects",
         skills: "Technical Skills",
         education: "Certs & Education",
       },
-      projectOrder: ["attrition", "quizlab", "businessos", "interview", "sentiment"],
+      projectOrder: ["attrition", "quizlab", "interview", "businessos", "sentiment"],
     },
   },
 
@@ -203,78 +212,94 @@ EDUCATION:
     },
     hero: {
       title: "Systems & Data Engineer",
-      subtitle: "Building production Python backend microservices, relational databases, and explainable ML pipelines.",
-      description: "Combining FastAPI, PostgreSQL 16, Redis, and Docker with applied Machine Learning (XGBoost, SHAP, Groq LLaMA) to engineer production software.",
+      subtitle: "Building production ML pipelines, document intelligence RAG platforms, computer vision, and FastAPI backends.",
+      description: "Combining Python, Scikit-learn, PyTorch, XGBoost (0.89 ROC-AUC), MLflow, FastAPI, and AWS to engineer end-to-end production systems.",
       taglinePrefix: "I build ",
-      rolesList: ["Systems & Data Engineer", "Python Backend Developer", "Applied ML Engineer"],
+      rolesList: ["Machine Learning Engineer", "NLP & Computer Vision Specialist", "FastAPI & Cloud Architect"],
     },
     about: {
-      headline: "Engineering scalable backend systems and explainable ML pipelines.",
-      bio: "Final-year B.Tech IT student combining Python backend microservices (FastAPI, PostgreSQL 16, Redis, Docker) with explainable machine learning models (XGBoost, SHAP, SMOTE, Groq LLaMA RAG) for production deployment.",
+      headline: "Engineering end-to-end Machine Learning systems, NLP RAG pipelines & Computer Vision.",
+      bio: "Final-year Information Technology student (B.Tech IT, Graduating 2027) focused on applied machine learning, document intelligence (ChromaDB, Sentence Transformers, RAG), multimodal computer vision (MediaPipe 468 landmarks), and FastAPI/AWS deployments.",
       stackCategoryOrder: [
-        "LANGUAGES",
-        "TOOLS & FRAMEWORKS",
+        "PROGRAMMING",
         "MACHINE LEARNING",
-        "DATA ANALYTICS",
-        "ARTIFICIAL INTELLIGENCE",
+        "NLP / INFORMATION RETRIEVAL",
+        "COMPUTER VISION",
+        "BACKEND / CLOUD",
       ],
     },
     currentFocus: {
       items: [
-        "FastAPI",
-        "PostgreSQL",
-        "Redis",
-        "Docker",
         "Python",
-        "SQL",
+        "Scikit-learn",
+        "PyTorch",
         "XGBoost",
-        "SHAP",
-        "Groq LLaMA",
-        "Clean Architecture",
+        "MLflow",
+        "FastAPI",
+        "RAG",
+        "ChromaDB",
+        "MediaPipe",
+        "OpenCV",
+        "AWS",
+        "PostgreSQL",
+        "MySQL",
+        "Streamlit",
+        "Git",
       ],
     },
     roadmap: {
       steps: [
-        { step: "01", label: "Backend Microservices", desc: "FastAPI async REST endpoints with Clean Architecture" },
-        { step: "02", label: "Relational Persistence", desc: "PostgreSQL 16 schemas & Alembic migrations" },
-        { step: "03", label: "Security & Caching", desc: "Redis token rotation & RBAC security" },
-        { step: "04", label: "Applied Machine Learning", desc: "XGBoost classification with SMOTE resampling" },
-        { step: "05", label: "Explainability & AI", desc: "SHAP feature waterfalls & Groq LLaMA RAG" },
+        { step: "01", label: "Data Pipelines & ETL", desc: "Python data engineering pipelines yielding ~25% error reduction" },
+        { step: "02", label: "ML & Threshold Tuning", desc: "XGBoost & PyTorch attrition model achieving 0.89 ROC-AUC" },
+        { step: "03", label: "Experiment Tracking", desc: "MLflow logging of hyperparams, metrics & model artifacts" },
+        { step: "04", label: "RAG & Vector Search", desc: "ChromaDB & Sentence Transformers sub-50ms retrieval" },
+        { step: "05", label: "Multimodal Vision & Audio", desc: "MediaPipe 468 points & spectrogram latency under 150ms" },
+        { step: "06", label: "REST APIs & AWS Cloud", desc: "Async FastAPI REST endpoints deployed on AWS infrastructure" },
       ],
     },
-    projectOrder: ["businessos", "attrition", "quizlab", "sentiment", "interview", "startup"],
+    projectOrder: ["attrition", "quizlab", "interview", "businessos", "sentiment", "startup"],
     skillsCategoryOrder: ["programming", "deploy", "cloud", "ml", "viz"],
     resume: {
-      title: "Systems Engineer Summary",
+      title: "Machine Learning Engineer Resume",
       rawSummaryText: `MEET CHHUGANI
-Systems Engineer & Applied Developer
-Email: meetchhugani81@gmail.com | Phone: +91-7862806190
-GitHub: github.com/MeetChhugani | LinkedIn: linkedin.com/in/meet-chhugani
+Machine Learning Engineer | NLP, Computer Vision & ML
++91-7862806190 | Gujarat, India | meetchhugani81@gmail.com | Portfolio: meetchhugani.vercel.app | GitHub: github.com/MeetChhugani | LinkedIn: linkedin.com/in/meet-chhugani
 
-SUMMARY:
-Builds backend systems, data workflows, and applied ML features with a focus on production reliability, architecture clarity, and measurable business value.
+PROFESSIONAL SUMMARY:
+Final-year Information Technology student focused on applied machine learning for NLP, computer vision, and document intelligence. Built end-to-end ML systems using Python, Scikit-learn, PyTorch, and XGBoost, including RAG pipelines and multimodal interview analysis. Experienced in FastAPI, Streamlit, AWS, MLflow, and vector databases for experiment tracking, deployment, and production-oriented ML workflows.
 
 EXPERIENCE:
-- Python & Django Developer Intern – Brainybeam Info-Tech Pvt. Ltd. (Jun 2025 – Jul 2025)
 - Data Analytics Intern – iStudio (Jan 2026 – Feb 2026)
+  • Built Python data engineering pipelines and ETL processes to validate, clean, and structure raw transaction datasets, yielding a ~25% runtime-error reduction.
+  • Performed exploratory data analysis (EDA) and statistical modeling utilizing SQL, Pandas, and NumPy to identify patterns and resolve operational problems.
+  • Collaborated in cross-functional teams to document database processes and translate complex analytical insights into structured reports.
+- Python with Django Intern – Brainybeam Info-Tech Pvt. Ltd. (Jun 2025 – Jul 2025)
+  • Developed modular Python backend components and database schemas, implementing Django REST Framework endpoints for web application workflows.
+  • Automated testing, systematic debugging, and backend query optimization, achieving a ~30% response-time improvement in data processing.
+  • Utilized Git version control across multi-person development environments and generated developer-facing technical documentation.
 
 PROJECTS:
-- AI BusinessOS – FastAPI, PostgreSQL, Redis, Docker, JWT
-- Employee Risk Radar – XGBoost + SHAP explainability
-- Fintech Sentiment Analyzer – NLP pipeline with 3,000+ headlines
+- Employee Risk Radar | ML Prediction & Experimentation (Python, Scikit-learn, XGBoost, PyTorch, MLflow, SHAP, Streamlit)
+  • Developed an employee attrition prediction pipeline evaluating 1,470 employee samples across 30 feature variables using Python, Scikit-learn, XGBoost, and PyTorch.
+  • Addressed severe class imbalance using SMOTE and classification-threshold optimization, achieving a 0.89 ROC-AUC score.
+  • Used MLflow for experiment tracking, recording model parameters, evaluation metrics, and artifacts across training experiments.
+- QuizLab | RAG-Powered AI Learning & Information Retrieval Platform (Python, Streamlit, RAG, ChromaDB, Sentence Transformers, Groq, NLP, OCR)
+  • Built a RAG-powered document intelligence pipeline that converts uploaded PDFs into searchable vector knowledge using PyMuPDF text extraction, chunking, Sentence Transformer embeddings, and ChromaDB storage.
+  • Implemented semantic and metadata-aware retrieval to ground Groq LLM responses in document context, maintaining a 3-state adaptive difficulty state machine executing evaluation logic in under 50ms.
+- AI-Powered Mock Interview Analyzer | Computer Vision & Career Recommendation (Python, FastAPI, OpenCV, MediaPipe, NLP, Recommendation Systems, AWS)
+  • Engineered a multimodal interview analysis pipeline utilizing MediaPipe face mesh landmarks (468 points) and Web Audio API spectrogram analysis, processing real-time audio streams under 150ms latency.
+  • Developed scoring workflows analyzing posture stability, speech tempo (WPM), and technical keyword density to generate structured candidate performance feedback.
 
-SKILLS:
-- Backend: FastAPI, Django, REST APIs, SQLAlchemy, PostgreSQL, Redis
-- Data & ML: Pandas, NumPy, XGBoost, SHAP, Scikit-learn, NLP
-- Delivery: Docker, GitHub Actions, Streamlit
-`.trim(),
+EDUCATION:
+- Gyanmanjari Innovative University, Bhavnagar, Gujarat (Expected Graduation: 2027)
+  Bachelor of Technology in Information Technology`.trim(),
       tabLabels: {
         experience: "Work Experience",
         projects: "Selected Projects",
         skills: "Technical Skills",
         education: "Certs & Education",
       },
-      projectOrder: ["businessos", "attrition", "sentiment", "quizlab", "interview"],
+      projectOrder: ["attrition", "quizlab", "interview", "sentiment", "businessos"],
     },
   },
 
@@ -300,87 +325,89 @@ SKILLS:
       resumeHeader: "AI_RESUME // SPECIFICATION_DOC",
     },
     hero: {
-      title: "AI / ML Engineer",
-      subtitle: "Building intelligent systems using Machine Learning, Large Language Models and modern AI infrastructure.",
-      description: "Focused on creating production-ready AI applications that solve real-world problems through data and intelligent automation.",
-      taglinePrefix: "I am an ",
-      rolesList: ["AI / ML Engineer", "Machine Learning Engineer", "LLM & RAG Architect"],
+      title: "Machine Learning Engineer",
+      subtitle: "Machine Learning Engineer | NLP, Computer Vision & ML workflows.",
+      description: "Focused on applied machine learning for NLP, computer vision, document intelligence RAG pipelines, MLflow experiment tracking, and AWS deployment.",
+      taglinePrefix: "I am a ",
+      rolesList: ["Machine Learning Engineer", "NLP & RAG Architect", "Computer Vision Specialist"],
     },
     about: {
-      headline: "Engineering intelligent models into production solutions.",
-      bio: "Final-year B.Tech IT student specializing in supervised machine learning (Scikit-learn, XGBoost), explainable AI (SHAP), LLM orchestration (Groq LLaMA, RAG), and end-to-end data pipelines.",
+      headline: "Engineering applied ML models, document RAG pipelines & computer vision.",
+      bio: "Final-year Information Technology student (B.Tech IT, Graduating 2027) specializing in supervised machine learning (Scikit-learn, XGBoost, PyTorch, 0.89 ROC-AUC), explainable AI (SHAP, MLflow), RAG platforms (ChromaDB, Sentence Transformers), MediaPipe vision analytics, and FastAPI/AWS deployment.",
       stackCategoryOrder: [
         "MACHINE LEARNING",
-        "ARTIFICIAL INTELLIGENCE",
-        "DATA ANALYTICS",
-        "LANGUAGES",
-        "TOOLS & FRAMEWORKS",
+        "NLP / INFORMATION RETRIEVAL",
+        "COMPUTER VISION",
+        "ML ENGINEERING",
+        "BACKEND / CLOUD",
       ],
     },
     currentFocus: {
       items: [
-        "Machine Learning",
-        "Deep Learning",
-        "LLMs",
-        "Prompt Engineering",
-        "LangChain",
-        "LlamaIndex",
-        "RAG",
-        "AI Agents",
-        "Vector Databases",
-        "MLOps",
+        "Python",
+        "Scikit-learn",
+        "PyTorch",
+        "XGBoost",
         "MLflow",
-        "Transformers",
-        "HuggingFace",
-        "Model Deployment",
+        "SHAP",
+        "RAG",
+        "ChromaDB",
+        "Sentence Transformers",
+        "OpenCV",
+        "MediaPipe",
+        "FastAPI",
+        "AWS",
+        "PostgreSQL",
       ],
     },
     roadmap: {
       steps: [
-        { step: "01", label: "Machine Learning", desc: "Scikit-learn, XGBoost & statistical modeling" },
-        { step: "02", label: "Deep Learning", desc: "Neural network architectures & PyTorch" },
-        { step: "03", label: "LLMs", desc: "Large Language Models & prompt optimization" },
-        { step: "04", label: "RAG", desc: "Retrieval-Augmented Generation & context injection" },
-        { step: "05", label: "Vector DBs", desc: "Embeddings indexing & similarity search" },
-        { step: "06", label: "MLOps", desc: "Model deployment, tracking & monitoring" },
-        { step: "07", label: "AI Agents", desc: "Autonomous multi-agent workflows", isFuture: true },
+        { step: "01", label: "Machine Learning", desc: "Scikit-learn, PyTorch & XGBoost (0.89 ROC-AUC)" },
+        { step: "02", label: "Experiment Tracking", desc: "MLflow logging of params, metrics & model artifacts" },
+        { step: "03", label: "NLP & Vector Search", desc: "ChromaDB, Sentence Transformers & PyMuPDF RAG" },
+        { step: "04", label: "Computer Vision", desc: "MediaPipe 468 facial mesh landmarks & Web Audio spectrograms" },
+        { step: "05", label: "Model Interpretability", desc: "SHAP local feature attribution across 30 predictor variables" },
+        { step: "06", label: "Deployment & AWS", desc: "Async FastAPI REST APIs with AWS & Streamlit serving" },
       ],
     },
-    projectOrder: ["attrition", "startup", "quizlab", "sentiment", "interview", "businessos"],
+    projectOrder: ["attrition", "quizlab", "interview", "sentiment", "startup", "businessos"],
     skillsCategoryOrder: ["ml", "viz", "programming", "deploy", "cloud"],
     resume: {
-      title: "AI/ML Engineer Summary",
+      title: "Machine Learning Resume",
       rawSummaryText: `MEET CHHUGANI
-AI/ML Engineer | Data Scientist
+Machine Learning Engineer | NLP, Computer Vision & ML
 Email: meetchhugani81@gmail.com | Phone: +91-7862806190
 GitHub: github.com/MeetChhugani | LinkedIn: linkedin.com/in/meet-chhugani
 
+PROFESSIONAL SUMMARY:
+Final-year Information Technology student focused on applied machine learning for NLP, computer vision, and document intelligence. Built end-to-end ML systems using Python, Scikit-learn, PyTorch, and XGBoost, including RAG pipelines and multimodal interview analysis. Experienced in FastAPI, Streamlit, AWS, MLflow, and vector databases for experiment tracking, deployment, and production-oriented ML workflows.
+
 EXPERIENCE:
-- Data Analytics Intern (Jan 2026 - Feb 2026) @ iStudio
-  Performed data cleaning, built dashboards supporting business decisions, and applied Excel/SQL techniques.
-- Python & Django Developer Intern (Jun 2025 - Jul 2025) @ Brainybeam Info-Tech
-  Developed RESTful APIs and backend modules using Python and Django.
+- Data Analytics Intern (Jan 2026 – Feb 2026) @ iStudio
+  Built Python data engineering pipelines and ETL processes to validate, clean, and structure raw transaction datasets, yielding a ~25% runtime-error reduction. Performed EDA utilizing SQL, Pandas, and NumPy.
+- Python with Django Intern (Jun 2025 – Jul 2025) @ Brainybeam Info-Tech Pvt. Ltd.
+  Developed modular Python backend components and database schemas, achieving a ~30% response-time improvement in data processing.
 
 PROJECTS:
-- Employee Risk Radar (Python, Scikit-learn, SHAP, Streamlit)
-  XGBoost-based employee attrition predictor utilizing SHAP local explainability.
-- Startup Success Predictor (Python, Scikit-learn, Random Forest)
-  Random Forest classification model predicting funding viability (0.81 ROC-AUC).
-- QuizLab (Python, Streamlit, LLMs, OCR, NLP)
-  Interactive learning application parsing document arrays into JSON flashcard decks.
-- Fintech Sentiment Analyzer (Python, NLP, Streamlit, Groq API)
-  Data pipeline ingesting 3,000+ headlines against NSE/BSE data.
-- AI-Powered Mock Interview Analyzer (Flutter, Python, FastAPI, MediaPipe, NLP)
-  Real-time posture and facial expression telemetry backend.
+- Employee Risk Radar | ML Prediction & Experimentation (Python, Scikit-learn, XGBoost, PyTorch, MLflow, SHAP, Streamlit)
+  Evaluated 1,470 employee samples across 30 feature variables using PyTorch & XGBoost. Addressed class imbalance using SMOTE (0.89 ROC-AUC). MLflow experiment tracking & SHAP explainability.
+- QuizLab | RAG-Powered AI Learning & Information Retrieval Platform (Python, Streamlit, RAG, ChromaDB, Sentence Transformers, Groq, NLP, OCR)
+  Converts uploaded PDFs into searchable vector knowledge using PyMuPDF, Sentence Transformers, and ChromaDB. 3-state adaptive difficulty state machine executing evaluation logic under 50ms.
+- AI-Powered Mock Interview Analyzer | Computer Vision & Career Recommendation (Python, FastAPI, OpenCV, MediaPipe, NLP, Recommendation Systems, AWS)
+  Multimodal analysis utilizing MediaPipe face mesh (468 points) and Web Audio API spectrograms (<150ms latency). Recommendation system for candidate matching. Async FastAPI on AWS.
 
 TECHNICAL SKILLS:
-- Languages: Python, SQL
-- ML: Scikit-learn, Feature Engineering, Statistical Modeling, NLP, XGBoost, SHAP
-- Data: Pandas, NumPy, EDA, Data Visualization
-- AI: Generative AI, LLMs, Prompt Engineering, RAG, Agentic AI Basics
+- PROGRAMMING: Python, SQL
+- MACHINE LEARNING: Scikit-learn, PyTorch, XGBoost, Predictive Modeling, Classification, Regression, Feature Engineering, Model Evaluation, Model Tuning
+- NLP / INFORMATION RETRIEVAL: NLP, OCR, Information Extraction, RAG, Embeddings, Sentence Transformers, Semantic Search, Document Processing
+- COMPUTER VISION: OpenCV, MediaPipe, Image Processing
+- ML ENGINEERING: MLflow, Experiment Tracking, Model Inference, Model Deployment
+- BACKEND / CLOUD: FastAPI, REST APIs, AWS
+- DATABASES: PostgreSQL, MySQL, ChromaDB
+- DATA / TOOLS: Pandas, NumPy, Git, GitHub, Jupyter Notebook, Streamlit
 
 EDUCATION:
-- Gyanmanjari Innovative University (2023 - Present)
+- Gyanmanjari Innovative University, Bhavnagar, Gujarat (Expected Graduation: 2027)
   Bachelor of Technology in Information Technology`.trim(),
       tabLabels: {
         experience: "Work Experience",
@@ -388,7 +415,7 @@ EDUCATION:
         skills: "Technical Skills",
         education: "Certs & Education",
       },
-      projectOrder: ["attrition", "startup", "quizlab", "sentiment", "interview"],
+      projectOrder: ["attrition", "quizlab", "interview", "sentiment", "startup"],
     },
   },
 };

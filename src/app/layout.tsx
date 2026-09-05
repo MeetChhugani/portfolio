@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { RoleProvider } from "@/context/RoleContext";
-import CarBackground from "@/components/car/CarBackground";
 
 const outfit = Space_Grotesk({
   variable: "--font-outfit",
@@ -107,7 +106,6 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${outfit.variable} ${plusJakarta.variable} ${shareTech.variable} antialiased selection:bg-emerald-500/20 selection:text-emerald-300`}
       >
-        <CarBackground />
         <RoleProvider>{children}</RoleProvider>
       </body>
     </html>

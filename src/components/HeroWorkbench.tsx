@@ -27,7 +27,7 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
   const [manualPaused, setManualPaused] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const priorityRole = role === "dataScience" ? "dataScience" : "backendDev";
-  const featured = useMemo(() => shelfIds.map((id) => projects.find((project) => project.id === id)!).sort((a, b) => a.rolePriority[priorityRole] - b.rolePriority[priorityRole]), [priorityRole]);
+  const featured = useMemo(() => shelfIds.map((id) => projects.find((project) => project.id === id)).filter((project): project is PortfolioProject => Boolean(project)).sort((a, b) => a.rolePriority[priorityRole] - b.rolePriority[priorityRole]), [priorityRole]);
   const activeProject = featured[activeIndex];
   const move = useCallback((direction: number) => setActiveIndex((index) => (index + direction + featured.length) % featured.length), [featured.length]);
   const pauseAfterInteraction = useCallback((duration = 5000) => {

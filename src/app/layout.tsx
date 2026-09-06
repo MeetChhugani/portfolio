@@ -23,18 +23,18 @@ const shareTech = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://meetchhugani.vercel.app"),
-  title: "Meet Chhugani | Python Backend Developer & AI Engineer",
+  title: "Meet Chhugani | AI/ML Engineer",
   description:
-    "Portfolio of Meet Chhugani — Python Developer specializing in FastAPI backend microservices, PostgreSQL databases, Docker containerization, and production AI integrations.",
+    "AI/ML Engineer building intelligent applications with Generative AI, RAG, NLP and Machine Learning.",
   keywords: [
     "Meet Chhugani",
-    "Python Developer",
-    "Backend Developer",
-    "FastAPI",
-    "Django",
-    "PostgreSQL",
-    "Docker",
+    "AI/ML Engineer",
+    "Generative AI",
+    "RAG",
+    "NLP",
     "Machine Learning",
+    "Python",
+    "FastAPI",
     "Software Engineer Portfolio",
   ],
   authors: [{ name: "Meet Chhugani", url: "https://github.com/MeetChhugani" }],
@@ -43,20 +43,20 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Meet Chhugani | Python Backend Developer & AI Engineer",
-    description:
-      "Python Developer & AI Engineer specializing in FastAPI async microservices, PostgreSQL, Docker, Groq LLaMA LLM pipelines, and SHAP explainable ML.",
-    url: "https://meetchhugani.vercel.app",
+    title: "Meet Chhugani | AI/ML Engineer",
+    description: "AI/ML Engineer building intelligent AI applications.",
+    url: "https://meetchhugani.vercel.app/",
     siteName: "Meet Chhugani Portfolio",
     locale: "en_US",
     type: "website",
+    images: ["https://meetchhugani.vercel.app/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meet Chhugani | Python Developer",
-    description:
-      "Python Backend Developer & AI Engineer specializing in FastAPI, PostgreSQL, Docker, and ML systems.",
+    title: "Meet Chhugani | AI/ML Engineer",
+    description: "AI/ML Engineer building intelligent AI applications.",
     creator: "@MeetChhugani",
+    images: ["https://meetchhugani.vercel.app/og-image.png"],
   },
 };
 
@@ -64,7 +64,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Meet Chhugani",
-  jobTitle: "Python Backend Developer & AI Engineer",
+  jobTitle: "AI/ML Engineer",
   url: "https://meetchhugani.vercel.app",
   sameAs: [
     "https://github.com/MeetChhugani",
@@ -75,17 +75,15 @@ const jsonLd = {
     name: "Gyanmanjari Innovative University",
   },
   knowsAbout: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Generative AI",
+    "RAG",
+    "NLP",
     "Python",
     "FastAPI",
-    "Django",
     "PostgreSQL",
-    "Redis",
     "Docker",
-    "Machine Learning",
-    "Scikit-learn",
-    "XGBoost",
-    "SHAP",
-    "REST APIs",
   ],
 };
 

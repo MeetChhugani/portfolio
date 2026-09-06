@@ -87,9 +87,19 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
   return <section id="home" className="hero-rebuilt">
     <div className="hero-personal">
       <p className="hero-eyebrow">PERSONAL ENGINEERING WORKSPACE</p>
-      <h1 className="hero-name"><span>MEET</span><em>CHHUGANI</em></h1>
-      <p className="hero-role-line">AI / ML ENGINEER <i /> PYTHON BACKEND DEVELOPER</p>
-      <h2>I learn by <span>building.</span></h2>
+      <div className="hero-identity-block my-6">
+        <h2 className="text-2xl sm:text-3xl font-bold font-title text-emerald-400 tracking-wider uppercase flex items-center gap-2.5">
+          <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+          AI / ML ENGINEER
+        </h2>
+        <h3 className="text-base sm:text-lg font-title font-semibold text-zinc-200 mt-2 leading-snug">
+          Building practical intelligent systems with <br className="hidden sm:block" />
+          <span className="text-emerald-300">Python, Machine Learning & Generative AI.</span>
+        </h3>
+        <p className="font-mono text-xs text-zinc-400 tracking-wider mt-3 font-medium">
+          Python · ML · GenAI · RAG · NLP
+        </p>
+      </div>
       <p className="hero-manifesto">I build practical Python systems, machine learning models, and AI applications to understand how real software works.</p>
       <p className="hero-support">From backend APIs and data workflows to explainable ML and LLM-powered applications, I turn ideas into working systems.</p>
       <div className="hero-buttons"><button onClick={onExplore} data-cursor-label="OPEN" className="hero-primary">EXPLORE MY WORK <ArrowDownRight size={18} /></button><a data-cursor-label="OPEN" href="/Meet_Chhugani_Resume.pdf" download className="hero-secondary">DOWNLOAD RESUME <Download size={14} /></a></div>

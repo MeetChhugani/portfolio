@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { useRole } from "@/context/RoleContext";
 
 interface DependencyNode {
@@ -94,7 +93,6 @@ const SkillsEcosystem: React.FC = () => {
   const selectedNode = activeNodes.find(n => n.id === hoveredTech) || activeNodes.find(n => n.id === "python") || activeNodes[0];
 
   const primaryAccent = role === "backendDev" ? "sky" : role === "dataScience" ? "purple" : "emerald";
-  const glowClass = role === "backendDev" ? "shadow-sky-500/20 border-sky-500" : role === "dataScience" ? "shadow-purple-500/20 border-purple-500" : "shadow-emerald-500/20 border-emerald-500";
 
   return (
     <div className="w-full flex flex-col gap-6">

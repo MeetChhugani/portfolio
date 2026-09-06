@@ -9,7 +9,6 @@ import {
   Edge
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { useRole } from "@/context/RoleContext";
 import { 
   ArrowUpRight,
   Layers,
@@ -48,9 +47,6 @@ export const SystemNodeCard = ({ data }: { data: SystemNodeData }) => {
 };
 
 export const HowIBuildSoftware: React.FC = () => {
-  const { role } = useRole();
-  const isBackend = role === "backendDev";
-
   const [selectedNodeId, setSelectedNodeId] = useState<string>("api_gateway");
 
   // Node details dictionary with real production code evidence

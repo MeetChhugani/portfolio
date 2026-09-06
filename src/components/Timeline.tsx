@@ -14,7 +14,6 @@ export const Timeline: React.FC = () => {
   const { role, content } = useRole();
   const isBackend = role === "backendDev";
   const primaryAccent = isBackend ? "text-sky-400" : "text-purple-400";
-  const accentBorder = isBackend ? "border-sky-500/30" : "border-purple-500/30";
   const accentText = isBackend ? "text-sky-300" : "text-purple-300";
 
   // State to hold the selected experience detail from the waveform

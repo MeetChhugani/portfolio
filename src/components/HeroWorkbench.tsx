@@ -102,7 +102,7 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
       </div>
       <p className="hero-manifesto">I build practical Python systems, machine learning models, and AI applications to understand how real software works.</p>
       <p className="hero-support">From backend APIs and data workflows to explainable ML and LLM-powered applications, I turn ideas into working systems.</p>
-      <div className="hero-buttons"><button onClick={onExplore} data-cursor-label="OPEN" className="hero-primary">EXPLORE MY WORK <ArrowDownRight size={18} /></button><a data-cursor-label="OPEN" href="/Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf" download="Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf" className="hero-secondary">DOWNLOAD RESUME <Download size={14} /></a></div>
+      <div className="hero-buttons"><button onClick={onExplore} data-cursor-label="OPEN" className="hero-primary">EXPLORE MY WORK <ArrowDownRight size={18} /></button><a data-cursor-label="OPEN" href="/Meet_Chhugani_Resume.pdf" download="Meet_Chhugani_Resume.pdf" className="hero-secondary">DOWNLOAD RESUME <Download size={14} /></a></div>
       <div className="hero-links"><a href={portfolioIdentity.github} target="_blank" rel="noopener noreferrer"><Github size={16} />GitHub</a><a href={portfolioIdentity.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={16} />LinkedIn</a><a href={`mailto:${portfolioIdentity.email}`}><Mail size={16} />Email</a></div>
     </div>
     <div className="hero-motion-proof">

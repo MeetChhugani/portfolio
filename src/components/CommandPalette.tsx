@@ -161,8 +161,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                 <Command.Item
                   onSelect={() => {
                     const link = document.createElement("a");
-                    link.href = "/Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf";
-                    link.download = "Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf";
+                    link.href = "/Meet_Chhugani_Resume.pdf";
+                    link.download = "Meet_Chhugani_Resume.pdf";
                     link.click();
                     onClose();
                   }}

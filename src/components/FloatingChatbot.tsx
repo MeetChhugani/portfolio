@@ -458,14 +458,14 @@ const FloatingChatbot: React.FC = () => {
                     >
                       <div className="flex items-center gap-1.5">
                         <FileText className="w-3.5 h-3.5 text-cyan-400" />
-                        <span className="text-xs font-bold text-zinc-200">Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf</span>
+                        <span className="text-xs font-bold text-zinc-200">Meet_Chhugani_Resume.pdf</span>
                       </div>
                       <p className="text-[0.62rem] text-zinc-400 leading-normal">
                         PDF Format, listing skills in Python, Scikit-Learn, PyTorch, Azure AI, and XGBoost modeling.
                       </p>
                       <a 
-                        href="/Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf" 
-                        download="Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf"
+                        href="/Meet_Chhugani_Resume.pdf" 
+                        download="Meet_Chhugani_Resume.pdf"
                         className="flex items-center justify-center gap-1 bg-cyan-600 hover:bg-cyan-500 text-white font-mono text-[0.6rem] px-3 py-1.5 rounded-lg transition-colors cursor-pointer w-full mt-1"
                       >
                         <Download className="w-2.5 h-2.5" />

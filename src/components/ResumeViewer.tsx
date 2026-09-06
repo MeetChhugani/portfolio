@@ -75,8 +75,8 @@ const ResumeViewer: React.FC = () => {
             </button>
 
             <a 
-              href="/Meet_Chhugani_Resume.pdf" 
-              download
+              href="/Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf" 
+              download="Meet_Chhugani_Continental_AI_Engineer_Intern_Resume.pdf"
               className={`flex items-center gap-2 text-white transition-all text-[0.65rem] px-3.5 py-2 rounded-lg cursor-pointer shadow-md ${buttonAccentClass}`}
               data-cursor-label="download pdf blueprint"
             >

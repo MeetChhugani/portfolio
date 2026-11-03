@@ -114,6 +114,7 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
             data-cursor-label="HOME"
             onClick={() => go("home")}
             aria-label="Meet Chhugani — home"
+            suppressHydrationWarning
           >
             <span className="deck-sigil" aria-hidden="true">
               <i />
@@ -139,6 +140,7 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
                   className={`deck-link ${isActive ? "is-active" : ""}`}
                   aria-current={isActive ? "location" : undefined}
                   onClick={() => go(link.id)}
+                  suppressHydrationWarning
                 >
                   {isActive && (
                     <motion.span
@@ -192,6 +194,7 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
               onClick={onOpenPalette}
               aria-label="Open command palette"
               title="Search (Ctrl / ⌘ + K)"
+              suppressHydrationWarning
             >
               <span>⌘</span>K
             </button>
@@ -214,6 +217,7 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
               aria-label="Open navigation"
               aria-expanded={menu}
               aria-controls="deck-overlay"
+              suppressHydrationWarning
             >
               <Menu size={17} />
             </button>
@@ -250,6 +254,7 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
                   className="deck-overlay-close"
                   data-cursor-label="CLOSE"
                   onClick={closeMenu}
+                  suppressHydrationWarning
                 >
                   CLOSE <X size={14} />
                 </button>
@@ -269,6 +274,7 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
                       duration: reduced ? 0 : 0.42,
                       ease: [0.2, 0.8, 0.2, 1],
                     }}
+                    suppressHydrationWarning
                   >
                     <span>{link.index}</span>
                     {link.label}

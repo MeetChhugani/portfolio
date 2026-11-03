@@ -116,7 +116,7 @@ export const stackDomains: StackDomain[] = [
     label: "Machine Learning", 
     summary: "End-to-end classification, PyTorch models, MLflow experiment tracking, and SHAP explainability.", 
     technologies: [
-      { name: "Scikit-learn", what: "Machine Learning framework.", why: "Used for modeling pipelines and threshold tuning.", usedIn: ["Employee Risk Radar", "Startup Success Predictor"], role: "Model workflow" },
+      { name: "Scikit-learn", what: "Machine Learning framework.", why: "Used for modeling pipelines and threshold tuning.", usedIn: ["Employee Risk Radar"], role: "Model workflow" },
       { name: "PyTorch & XGBoost", what: "Deep Learning & Gradient Boosting.", why: "Achieved 0.89 ROC-AUC on attrition prediction.", usedIn: ["Employee Risk Radar"], role: "Classification" },
       { name: "MLflow", what: "ML Lifecycle & Experiment Tracking.", why: "Records hyperparams, metrics, and model artifacts.", usedIn: ["Employee Risk Radar"], role: "Experiment tracking" },
       { name: "SHAP", what: "Local Feature Attribution.", why: "Surfaces individual risk drivers across 30 features.", usedIn: ["Employee Risk Radar"], role: "Explainability" }
@@ -129,8 +129,8 @@ export const stackDomains: StackDomain[] = [
     technologies: [
       { name: "ChromaDB & RAG", what: "Vector Database & Retrieval.", why: "Powers sub-50ms context retrieval for PDF knowledge.", usedIn: ["QuizLab"], role: "Vector search" },
       { name: "Sentence Transformers", what: "Text Embeddings.", why: "Converts text chunks into dense vector representations.", usedIn: ["QuizLab"], role: "Embeddings" },
-      { name: "MediaPipe & OpenCV", what: "Multimodal Computer Vision.", why: "Tracks 468 facial mesh landmarks & posture in real-time.", usedIn: ["Mock Interview Analyzer"], role: "Vision analytics" },
-      { name: "Groq LLM", what: "Low-latency LLM Inference.", why: "Grounds generative responses in document context.", usedIn: ["QuizLab", "Fintech Sentiment"], role: "Generative AI" }
+      { name: "MediaPipe & OpenCV", what: "Multimodal Computer Vision.", why: "Tracks 468 facial mesh landmarks & posture in real-time.", usedIn: ["AI-Powered Mock Interview Analyzer"], role: "Vision analytics" },
+      { name: "Groq LLM", what: "Low-latency LLM Inference.", why: "Grounds generative responses in document context.", usedIn: ["QuizLab", "Fintech Sentiment Analyzer"], role: "Generative AI" }
     ] 
   },
   { 
@@ -138,8 +138,9 @@ export const stackDomains: StackDomain[] = [
     label: "Backend & Cloud", 
     summary: "Asynchronous REST services, cloud infrastructure, and database schemas.", 
     technologies: [
-      { name: "FastAPI", what: "Async Python Framework.", why: "Serves real-time vision, audio & interview REST APIs.", usedIn: ["Mock Interview Analyzer", "AI BusinessOS"], role: "REST API layer" },
-      { name: "AWS", what: "Cloud Infrastructure.", why: "Hosts asynchronous backend APIs and services.", usedIn: ["Mock Interview Analyzer"], role: "Cloud hosting" },
+      { name: "Python", what: "Core Language.", why: "The language behind every backend service, pipeline, and model I ship.", usedIn: ["Employee Risk Radar", "QuizLab", "AI BusinessOS"], role: "Language" },
+      { name: "FastAPI", what: "Async Python Framework.", why: "Serves real-time vision, audio & interview REST APIs.", usedIn: ["AI-Powered Mock Interview Analyzer", "AI BusinessOS"], role: "REST API layer" },
+      { name: "AWS", what: "Cloud Infrastructure.", why: "Hosts asynchronous backend APIs and services.", usedIn: ["AI-Powered Mock Interview Analyzer"], role: "Cloud hosting" },
       { name: "PostgreSQL & MySQL", what: "Relational Databases.", why: "Used for normalized schema design and transaction storage.", usedIn: ["AI BusinessOS", "iStudio ETL"], role: "Data persistence" },
       { name: "Streamlit", what: "Interactive ML Serving.", why: "Deploys interactive ML and RAG applications.", usedIn: ["Employee Risk Radar", "QuizLab"], role: "App deployment" }
     ] 
@@ -189,8 +190,8 @@ export const verifiedLearning = [
 ] as const;
 
 export const technologyFlows: Record<string, { nodes: string[]; related: string[] }> = {
-  "Python": { nodes: ["Python", "Data Processing", "ML / RAG Pipeline", "FastAPI / Streamlit Interface"], related: ["FastAPI", "Scikit-learn", "PyTorch"] },
-  "FastAPI": { nodes: ["Client Request", "FastAPI Async Router", "OpenCV / MediaPipe / RecSys", "AWS Infrastructure"], related: ["Python", "AWS", "MediaPipe"] },
-  "XGBoost": { nodes: ["1,470 Samples", "SMOTE Resampling", "XGBoost & PyTorch", "0.89 ROC-AUC", "MLflow Logging", "SHAP Waterfall"], related: ["PyTorch", "MLflow", "SHAP"] },
-  "RAG": { nodes: ["PDF Upload", "PyMuPDF Extract", "Sentence Transformers", "ChromaDB Vector Store", "<50ms Retrieval", "Groq Response"], related: ["ChromaDB", "Sentence Transformers", "Groq"] },
+  "Python": { nodes: ["Python", "Data Processing", "ML / RAG Pipeline", "FastAPI / Streamlit Interface"], related: ["FastAPI", "Scikit-learn", "PyTorch & XGBoost"] },
+  "FastAPI": { nodes: ["Client Request", "FastAPI Async Router", "OpenCV / MediaPipe / RecSys", "AWS Infrastructure"], related: ["Python", "AWS", "MediaPipe & OpenCV"] },
+  "XGBoost": { nodes: ["1,470 Samples", "SMOTE Resampling", "XGBoost & PyTorch", "0.89 ROC-AUC", "MLflow Logging", "SHAP Waterfall"], related: ["PyTorch & XGBoost", "MLflow", "SHAP"] },
+  "RAG": { nodes: ["PDF Upload", "PyMuPDF Extract", "Sentence Transformers", "ChromaDB Vector Store", "<50ms Retrieval", "Groq Response"], related: ["ChromaDB & RAG", "Sentence Transformers", "Groq LLM"] },
 };

@@ -18,7 +18,7 @@ interface RoleContextType {
 const RoleContext = createContext<RoleContextType | undefined>(undefined);
 
 export const RoleProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [role, setRole] = useState<RoleType>("backendDev");
+  const [role, setRole] = useState<RoleType>("dataScience");
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
   const [hoveredDomain, setHoveredDomain] = useState<DomainType>(null);
 

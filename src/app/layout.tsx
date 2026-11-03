@@ -23,19 +23,19 @@ const shareTech = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://meetchhugani.vercel.app"),
-  title: "Meet Chhugani | AI/ML Engineer",
+  title: "Meet Chhugani | AI Engineer · Applied ML",
   description:
-    "AI/ML Engineer building intelligent applications with Generative AI, RAG, NLP and Machine Learning.",
+    "Portfolio of Meet Chhugani — AI Engineer building applied ML, RAG and LLM systems in Python, from explainable models and evaluation pipelines to production inference.",
   keywords: [
     "Meet Chhugani",
-    "AI/ML Engineer",
-    "Generative AI",
+    "AI Engineer",
+    "Applied ML",
+    "Machine Learning Engineer",
     "RAG",
-    "NLP",
-    "Machine Learning",
+    "LLM",
+    "PyTorch",
     "Python",
-    "FastAPI",
-    "Software Engineer Portfolio",
+    "AI Portfolio",
   ],
   authors: [{ name: "Meet Chhugani", url: "https://github.com/MeetChhugani" }],
   creator: "Meet Chhugani",
@@ -43,9 +43,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Meet Chhugani | AI/ML Engineer",
-    description: "AI/ML Engineer building intelligent AI applications.",
-    url: "https://meetchhugani.vercel.app/",
+    title: "Meet Chhugani | AI Engineer · Applied ML",
+    description:
+      "AI Engineer specializing in applied ML, RAG pipelines, LLM applications, explainable models and production Python inference.",
+    url: "https://meetchhugani.vercel.app",
     siteName: "Meet Chhugani Portfolio",
     locale: "en_US",
     type: "website",
@@ -53,8 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meet Chhugani | AI/ML Engineer",
-    description: "AI/ML Engineer building intelligent AI applications.",
+    title: "Meet Chhugani | AI Engineer",
+    description:
+      "AI Engineer building applied ML, RAG and LLM systems in Python — explainable models, evaluation and production inference.",
     creator: "@MeetChhugani",
     images: ["https://meetchhugani.vercel.app/og-image.png"],
   },
@@ -64,7 +66,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Meet Chhugani",
-  jobTitle: "AI/ML Engineer",
+  jobTitle: "AI Engineer",
   url: "https://meetchhugani.vercel.app",
   sameAs: [
     "https://github.com/MeetChhugani",
@@ -81,6 +83,14 @@ const jsonLd = {
     "RAG",
     "NLP",
     "Python",
+    "Machine Learning",
+    "PyTorch",
+    "Scikit-learn",
+    "XGBoost",
+    "SHAP",
+    "RAG",
+    "LLM Applications",
+    "Natural Language Processing",
     "FastAPI",
     "PostgreSQL",
     "Docker",
@@ -93,7 +103,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${outfit.variable} ${plusJakarta.variable} ${shareTech.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
@@ -102,7 +116,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${outfit.variable} ${plusJakarta.variable} ${shareTech.variable} antialiased selection:bg-emerald-500/20 selection:text-emerald-300`}
+        className="antialiased selection:bg-[#d4ff24] selection:text-[#030407]"
       >
         <RoleProvider>{children}</RoleProvider>
       </body>

@@ -5,12 +5,12 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useRole } from "@/context/RoleContext";
 
 const DOMAIN_CURSOR_COLORS: Record<string, string> = {
-  backend: "#34d399",
-  ai:      "#22d3ee",
-  ml:      "#a78bfa",
-  deploy:  "#fbbf24",
-  data:    "#2dd4bf",
-  arch:    "#818cf8",
+  backend: "#d4ff24",
+  ai:      "#4d8dff",
+  ml:      "#8aa6ff",
+  deploy:  "#c7e85c",
+  data:    "#5bd1ff",
+  arch:    "#6e8cff",
 };
 
 const CustomCursor: React.FC = () => {
@@ -81,8 +81,8 @@ const CustomCursor: React.FC = () => {
   const domainColor = hoveredDomain
     ? DOMAIN_CURSOR_COLORS[hoveredDomain]
     : hovered
-    ? "#e4e4e7"
-    : "rgba(255,255,255,0.35)";
+    ? "#d4ff24"
+    : "rgba(127,164,255,0.55)";
 
   const ringSize = hovered ? 36 : 24;
 
@@ -143,8 +143,8 @@ const CustomCursor: React.FC = () => {
           <span
             className="font-mono text-[0.55rem] tracking-wider px-1.5 py-0.5 rounded border"
             style={{
-              background: "rgba(5, 5, 7, 0.92)",
-              borderColor: `${domainColor}50`,
+              background: "rgba(3, 4, 7, 0.94)",
+              borderColor: `${domainColor}66`,
               color: domainColor,
               whiteSpace: "nowrap",
             }}

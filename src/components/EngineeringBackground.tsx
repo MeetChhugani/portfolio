@@ -4,8 +4,8 @@ import { useRole } from "@/context/RoleContext";
 import { useEffect, useRef, type CSSProperties } from "react";
 
 const colors: Record<string, string> = {
-  backend: "rgba(52,211,153,.055)", ai: "rgba(34,211,238,.055)",
-  ml: "rgba(167,139,250,.055)", data: "rgba(45,212,191,.055)", deploy: "rgba(251,191,36,.055)",
+  backend: "rgba(212,255,36,.07)", ai: "rgba(77,141,255,.09)",
+  ml: "rgba(138,166,255,.07)", data: "rgba(91,209,255,.065)", deploy: "rgba(199,232,92,.06)",
 };
 
 /** Static CSS background: no canvas loop or mouse-driven React state. */
@@ -29,5 +29,5 @@ export default function EngineeringBackground() {
     return () => { window.removeEventListener("pointermove", update); if (frame.current) cancelAnimationFrame(frame.current); };
   }, []);
 
-  return <div ref={background} aria-hidden="true" className="portfolio-background" style={{ "--ambient-accent": colors[hoveredDomain || ""] || "rgba(255,255,255,.025)" } as CSSProperties} />;
+  return <div ref={background} aria-hidden="true" className="portfolio-background" style={{ "--ambient-accent": colors[hoveredDomain || ""] || "rgba(127,164,255,.04)" } as CSSProperties} />;
 }

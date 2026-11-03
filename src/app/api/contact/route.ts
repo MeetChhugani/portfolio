@@ -1,8 +1,15 @@
 import { NextResponse } from "next/server";
 
+const asText = (value: unknown) => (typeof value === "string" ? value.trim() : "");
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function POST(req: Request) {
   try {
-    const { name, email, company, project } = await req.json();
+    const body = await req.json();
+    const name = asText(body?.name);
+    const email = asText(body?.email);
+    const company = asText(body?.company);
+    const project = asText(body?.project);
 
     if (!name || !email) {
       return NextResponse.json(
@@ -10,6 +17,16 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    if (!EMAIL_PATTERN.test(email) || email.length > 254) {
+      return NextResponse.json({ error: "A valid email address is required." }, { status: 400 });
+    }
+
+    if (name.length > 100 || company.length > 120 || project.length > 160) {
+      return NextResponse.json({ error: "One or more fields exceed the allowed length." }, { status: 400 });
+    }
+
+    const safeName = name.replace(/[\r\n]+/g, " ");
 
     const messageContent = `
 NEW PORTFOLIO INQUIRY RECEIVED:
@@ -30,12 +47,12 @@ Sent via Meet Chhugani's Portfolio (https://meetchhugani.vercel.app)
         Accept: "application/json",
       },
       body: JSON.stringify({
-        name: name,
-        email: email,
+        name,
+        email,
         company: company || "N/A",
         project: project || "N/A",
         message: messageContent,
-        _subject: `[Portfolio Message] New inquiry from ${name}`,
+        _subject: `[Portfolio Message] New inquiry from ${safeName}`,
         _captcha: "false",
       }),
     });

@@ -232,9 +232,45 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="experience" className="experience-section">
+        <div>
+          <p className="micro-label">03 / CAREER JOURNEY</p>
+          <h2>Where I&apos;ve<br />Built Things.</h2>
+          <p>Internships and hands-on roles shaping my engineering foundation.</p>
+        </div>
+        <div className="experience-timeline">
+          {experiences.map((item, index) => (
+            <article key={`${item.role}-${item.organization}-${index}`} className="experience-card">
+              <div className="experience-meta">
+                <span className="experience-period">{item.period}</span>
+                <span className="experience-org">
+                  {item.website ? (
+                    <a href={item.website} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', borderBottom: '1px solid transparent', transition: 'border-color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--lime)'} onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}>
+                      {item.organization}
+                    </a>
+                  ) : (
+                    item.organization
+                  )}
+                </span>
+              </div>
+              <h3 className="experience-role">{item.role}</h3>
+              {Array.isArray(item.detail) ? (
+                <ul className="experience-bullets">
+                  {item.detail.map((bullet, i) => (
+                    <li key={i} dangerouslySetInnerHTML={{ __html: bullet }} />
+                  ))}
+                </ul>
+              ) : (
+                <p className="experience-detail">{item.detail}</p>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="contact" className="contact-section-new">
         <div>
-          <p className="micro-label">03 / CONTACT</p>
+          <p className="micro-label">04 / CONTACT</p>
           <h2>Let&apos;s Build<br />Something.</h2>
           <p>If you&apos;re building an AI product, an ML system, or a Python backend and think I could contribute, I&apos;d like to hear about it.</p>
           <a href={`mailto:${portfolioIdentity.email}`}>{portfolioIdentity.email}<ArrowUpRight size={16} /></a>

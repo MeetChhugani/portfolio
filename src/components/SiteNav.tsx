@@ -183,9 +183,9 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
               </a>
             </div>
 
-            <span className="deck-badge" title="Open to AI engineer roles">
+            <span className="deck-badge" title="Open to AI/ML engineer roles">
               <i aria-hidden="true" />
-              AI ENGINEER
+              AI/ML ENGINEER
             </span>
 
             <button

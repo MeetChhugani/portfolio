@@ -167,6 +167,19 @@ export const stackDomains: StackDomain[] = [
 
 export const experiences = [
   { 
+    period: "2026 – Present", 
+    role: "AI/ML Engineer Intern", 
+    organization: "3i Infotech", 
+    website: "https://www.3i-infotech.com/",
+    detail: [
+      "<strong>Intelligent Recruitment Systems:</strong> Designed resume parsing, CV-to-JD matching, candidate eligibility scoring, and automated evaluation pipelines.",
+      "<strong>AI Voice Interviewing:</strong> Developed conversational screening workflows, speech processing, and automated response evaluation.",
+      "<strong>Hindi Voice Calling Agent:</strong> Building a Hindi-first conversational calling system with speech recognition, LLM-driven conversations, and text-to-speech synthesis.",
+      "<strong>ML Workflow Integration:</strong> Integrated dataset interchange, feature engineering, and model experimentation across recruitment products.",
+      "<strong>Technical Planning:</strong> Estimated infrastructure, operational, and maintenance costs for AI voice platforms with latency and scaling analysis."
+    ]
+  },
+  { 
     period: "Jan 2026 – Feb 2026", 
     role: "Data Analytics Intern", 
     organization: "iStudio", 

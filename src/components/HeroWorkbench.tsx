@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import { ArrowDownRight, ArrowUpRight, ChevronLeft, ChevronRight, Download, Code2 as Github, Network as Linkedin, Mail } from "lucide-react";
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion, useAnimation, animate, motion, AnimatePresence } from "framer-motion";
 import { EngineeringDomain, PortfolioProject, portfolioIdentity, projects, stackDomains } from "@/data/portfolioContent";
 import { useRole } from "@/context/RoleContext";
 
@@ -54,10 +54,10 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
   }, [isCaseStudyOpen, pauseAfterInteraction]);
   useEffect(() => () => window.clearTimeout(manualPauseTimer.current), []);
   useEffect(() => {
-    if (!isVisible || hoverPaused || manualPaused || isCaseStudyOpen || reducedMotion) return;
-    const timer = window.setTimeout(() => move(1), 4000);
+    if (!isVisible || isCaseStudyOpen || reducedMotion) return;
+    const timer = window.setTimeout(() => move(1), 3000);
     return () => window.clearTimeout(timer);
-  }, [activeIndex, hoverPaused, isCaseStudyOpen, isVisible, manualPaused, move, reducedMotion]);
+  }, [activeIndex, isCaseStudyOpen, isVisible, move, reducedMotion]);
 
   const parallax = (event: PointerEvent<HTMLDivElement>) => {
     const element = shelf.current;
@@ -531,9 +531,39 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
     };
   }, [reducedMotion]);
 
+  // 3D Flip Card Deck state
+  const [flipDirection, setFlipDirection] = useState<"forward" | "backward" | null>(null);
+  const [isFlipping, setIsFlipping] = useState(false);
+
+  const handleFlip = useCallback((direction: number) => {
+    if (isFlipping || featured.length <= 1) return;
+    setFlipDirection(direction > 0 ? "forward" : "backward");
+    setIsFlipping(true);
+    pauseAfterInteraction();
+    move(direction);
+  }, [isFlipping, featured.length, pauseAfterInteraction, move]);
+
+  const onFlipComplete = useCallback(() => {
+    setIsFlipping(false);
+    setFlipDirection(null);
+  }, []);
+
+  // Auto-flip when visible
+  useEffect(() => {
+    if (!isVisible || hoverPaused || manualPaused || isCaseStudyOpen || reducedMotion || featured.length <= 1) return;
+    const timer = window.setTimeout(() => {
+      if (!isFlipping) {
+        setFlipDirection("forward");
+        setIsFlipping(true);
+        move(1);
+      }
+    }, 5000);
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, hoverPaused, isCaseStudyOpen, isVisible, manualPaused, move, reducedMotion, featured.length, isFlipping]);
+
   return <section id="home" className="hero-rebuilt">
     <div className="hero-personal">
-      <p className="hero-eyebrow">AI ENGINEER · PERSONAL SYSTEMS LAB</p>
+      <p className="hero-eyebrow">AI/ML ENGINEER @ <span style={{ color: 'var(--lime)' }}>3i Infotech</span></p>
       <div className="hero-meta">
         <span className="meta-live">OPEN TO 2026 AI ROLES</span>
         <span>APPLIED AI</span>
@@ -560,26 +590,173 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
       <div className="hero-metrics" aria-label="Selected engineering metrics">
         <div><b>{String(projects.length).padStart(2, "0")}</b><span>SYSTEMS BUILT</span></div>
         <div><b>0.89</b><span>ROC-AUC · RISK ML</span></div>
-        <div><b>&lt;150ms</b><span>REAL-TIME CV</span></div>
+        <div><b>{"<150ms"}</b><span>REAL-TIME CV</span></div>
       </div>
     </div>
     <div className="hero-motion-proof">
-      <div className="hero-motion-heading"><p className="hero-eyebrow">PROJECTS IN MOTION</p><span>{String(safeIndex + 1).padStart(2, "0")} / {String(featured.length).padStart(2, "0")} · {activeProject?.title}</span></div>
-      <div ref={shelf} className="hero-motion-showcase" tabIndex={0} role="region" aria-label="Featured projects carousel. Use left and right arrow keys to change project." onKeyDown={onKeyDown} onPointerMove={(event) => { parallax(event); const start = dragStart.current; if (start !== null && Math.abs(event.clientX - start) > 12 && !event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.setPointerCapture(event.pointerId); }} onPointerEnter={() => setHoverPaused(true)} onPointerLeave={() => { setHoverPaused(false); dragStart.current = null; }} onFocus={() => setHoverPaused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setHoverPaused(false); }} onPointerDown={(event) => { const target = event.target as HTMLElement; if (target.closest(".hero-carousel-controls, .motion-card-link, .motion-card-tags")) return; pauseAfterInteraction(); dragStart.current = event.clientX; }} onPointerUp={(event) => { if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); const start = dragStart.current; dragStart.current = null; if (start === null) return; const delta = event.clientX - start; if (Math.abs(delta) > 42) move(delta > 0 ? -1 : 1); }}>
-        <div className="hero-carousel-stage">
-          {featured.map((project, index) => {
-            const distance = cyclicDistance(index, safeIndex, featured.length);
-            return <article key={project.id} className={`hero-motion-card domain-${project.domain} position-${distance < 0 ? `minus-${Math.abs(distance)}` : distance}`} aria-hidden={Math.abs(distance) > 1}>
-              <button type="button" data-cursor-label="VIEW PROJECT" className="motion-card-open" onClick={() => { pauseAfterInteraction(); onProject(project); }} aria-label={`Open ${project.title} case study`} tabIndex={Math.abs(distance) > 1 ? -1 : 0} />
-              <div className="motion-card-registration" aria-hidden="true" />
-              <div className="motion-card-topline"><span>CASE {String(index + 1).padStart(2, "0")}</span><small>{project.status}</small><i aria-hidden="true" /></div>
-              <p className="motion-card-category">{project.tag}</p><h3>{project.title}</h3><p className="motion-card-summary">{project.solution}</p>
-              <div className="motion-card-tags">{project.stack.slice(0, 4).map((technology) => resolveTechnology(technology) ? <button key={technology} type="button" onClick={() => { pauseAfterInteraction(); activateTech(technology); }} onPointerEnter={() => activateTech(technology)} onFocus={() => activateTech(technology)} tabIndex={Math.abs(distance) > 1 ? -1 : 0}>{technology}</button> : <span key={technology}>{technology}</span>)}</div>
-              <button type="button" data-cursor-label="VIEW PROJECT" className="motion-card-link" onClick={(event) => { event.stopPropagation(); pauseAfterInteraction(); onProject(project); }}>VIEW CASE <ArrowUpRight size={15} /></button>
-            </article>;
-          })}
+      <div className="hero-motion-heading">
+        <p className="hero-eyebrow">PROJECTS IN MOTION</p>
+        <span>{String(safeIndex + 1).padStart(2, "0")} / {String(featured.length).padStart(2, "0")} · {activeProject?.title}</span>
+      </div>
+      <div className="hero-drawer-container" ref={shelf} tabIndex={0} role="region" aria-label="Project cards drawer. Use arrow keys to navigate." onKeyDown={onKeyDown}>
+        <div className="hero-drawer-stage" style={{ position: 'relative', width: '100%', maxWidth: 1200, minHeight: 380, display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: 80, flexShrink: 0, flexDirection: 'row-reverse', paddingLeft: 60 }}>
+          {/* Deck Stack on the right */}
+          <div className="hero-deck-stack" aria-hidden="true" style={{ position: 'relative', width: 280, height: 340, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center', paddingRight: 20 }}>
+            {featured.map((project, index) => {
+              const isActive = index === safeIndex;
+              const isInDeck = !isActive;
+              const deckPosition = isInDeck ? index - (index > safeIndex ? 1 : 0) : -1;
+              const totalInDeck = featured.length - 1;
+              
+              if (!isInDeck) return null;
+              
+              const stackOffset = deckPosition * 3; // px offset for fanned look
+              const stackRotation = (deckPosition - totalInDeck / 2) * 3; // slight rotation for fanned effect
+              const stackZ = totalInDeck - deckPosition;
+              
+              return (
+                <motion.article
+                  key={`deck-${project.id}`}
+                  className={`hero-deck-card domain-${project.domain} in-stack`}
+                  style={{
+                    zIndex: stackZ,
+                    opacity: 0.6 + (deckPosition / totalInDeck) * 0.3,
+                  }}
+                  initial={{ opacity: 0, x: 30, yPercent: -50, rotate: stackRotation + 15, scale: 0.9 }}
+                  animate={{ opacity: 0.6 + (deckPosition / totalInDeck) * 0.3, x: stackOffset, yPercent: -50, rotate: stackRotation, scale: 1 }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 180,
+                    damping: 22,
+                    delay: deckPosition * 0.06,
+                    mass: 0.8
+                  }}
+                >
+                  <div className="stack-card-preview">
+                    <div className="card-topline"><span>CASE {String(index + 1).padStart(2, "0")}</span><small>{project.status}</small><i aria-hidden="true" /></div>
+                    <h3>{project.title}</h3>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+
+          {/* Center Draw Indicator */}
+          <div className="hero-draw-center" style={{
+            position: 'relative',
+            width: 1,
+            height: 200,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 16,
+            opacity: 0.4,
+          }}>
+            <div style={{
+              width: 4,
+              height: 60,
+              background: 'linear-gradient(180deg, transparent, var(--accent, #72e0a6), transparent)',
+              borderRadius: 2,
+              animation: 'drawPulse 2s ease-in-out infinite',
+            }} />
+            <span style={{
+              font: '700 10px var(--font-mono)',
+              color: 'var(--accent, #72e0a6)',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              writingMode: 'vertical-rl',
+              textOrientation: 'mixed',
+            }}>
+              DRAW
+            </span>
+            <div style={{
+              width: 4,
+              height: 60,
+              background: 'linear-gradient(180deg, transparent, var(--accent, #72e0a6), transparent)',
+              borderRadius: 2,
+              animation: 'drawPulse 2s ease-in-out infinite reverse',
+            }} />
+          </div>
+
+          {/* Active Card in Center */}
+          <AnimatePresence mode="wait">
+            <motion.article
+              key={`active-${activeProject.id}`}
+              className={`hero-deck-card domain-${activeProject.domain} active-card`}
+              style={{
+                position: 'relative',
+                zIndex: 10,
+              }}
+              initial={{ opacity: 0, x: 100, scale: 0.88, rotate: 8 }}
+              animate={{ opacity: 1, x: 0, scale: 1, rotate: 0 }}
+              exit={{ opacity: 0, x: -100, scale: 0.88, rotate: -8 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 160,
+                damping: 18,
+                mass: 0.9
+              }}
+            >
+              <div className="card-inner">
+                <div className="card-face card-front">
+                  <div className="card-topline"><span>CASE {String(safeIndex + 1).padStart(2, "0")}</span><small>{activeProject.status}</small><i aria-hidden="true" /></div>
+                  <p className="card-category">{activeProject.tag}</p>
+                  <h3>{activeProject.title}</h3>
+                  <p className="card-summary">{activeProject.solution}</p>
+                  <div className="card-tags">
+                    {activeProject.stack.slice(0, 4).map((technology) =>
+                    resolveTechnology(technology) ? (
+                      <button
+                        key={technology}
+                        type="button"
+                        onClick={() => { pauseAfterInteraction(); activateTech(technology); }}
+                        onPointerEnter={() => activateTech(technology)}
+                        onFocus={() => activateTech(technology)}
+                        tabIndex={0}
+                      >
+                        {technology}
+                      </button>
+                    ) : (
+                      <span key={technology}>{technology}</span>
+                    )
+                  )}
+                </div>
+                <button
+                  type="button"
+                  data-cursor-label="VIEW PROJECT"
+                  className="card-link"
+                  onClick={(event) => { event.stopPropagation(); pauseAfterInteraction(); onProject(activeProject); }}
+                >
+                  VIEW CASE <ArrowUpRight size={15} />
+                </button>
+              </div>
+            </div>
+          </motion.article>
+        </AnimatePresence>
         </div>
-        <div className="hero-carousel-controls"><button type="button" onClick={() => { pauseAfterInteraction(); move(-1); }} aria-label="Show previous project"><ChevronLeft size={17} /></button><div className="hero-carousel-dots" aria-label={`${activeProject?.title}, project ${safeIndex + 1} of ${featured.length}`}>{featured.map((project, index) => <button type="button" key={project.id} onClick={() => { pauseAfterInteraction(); setActiveIndex(index); }} aria-label={`Show ${project.title}`} aria-current={index === safeIndex} className={index === safeIndex ? "is-active" : ""} />)}</div><button type="button" onClick={() => { pauseAfterInteraction(); move(1); }} aria-label="Show next project"><ChevronRight size={17} /></button></div>
+
+        {/* Navigation Controls */}
+        <div className="hero-drawer-controls">
+          <button
+            type="button"
+            onClick={() => { pauseAfterInteraction(); move(-1); }}
+            aria-label="Previous project"
+            className="drawer-btn"
+          >
+            <ChevronLeft size={22} />
+          </button>
+          <button
+            type="button"
+            onClick={() => { pauseAfterInteraction(); move(1); }}
+            aria-label="Next project"
+            className="drawer-btn"
+          >
+            <ChevronRight size={22} />
+          </button>
+        </div>
+
+        <p className="drawer-hint">← → arrow keys to draw</p>
       </div>
     </div>
   </section>;

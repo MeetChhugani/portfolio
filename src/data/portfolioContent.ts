@@ -183,12 +183,14 @@ export const experiences = [
     period: "Jan 2026 – Feb 2026", 
     role: "Data Analytics Intern", 
     organization: "iStudio", 
+    website: "",
     detail: "Built Python data engineering pipelines and ETL processes to validate, clean, and structure raw transaction datasets, yielding a ~25% runtime-error reduction. Performed EDA and statistical modeling using SQL, Pandas, and NumPy." 
   },
   { 
     period: "Jun 2025 – Jul 2025", 
     role: "Python with Django Intern", 
     organization: "Brainybeam Info-Tech Pvt. Ltd.", 
+    website: "",
     detail: "Developed modular Python backend components and database schemas, implementing Django REST Framework endpoints. Automated testing and backend query optimization, achieving a ~30% response-time improvement." 
   },
 ] as const;

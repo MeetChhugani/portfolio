@@ -622,8 +622,8 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
                     zIndex: stackZ,
                     opacity: 0.6 + (deckPosition / totalInDeck) * 0.3,
                   }}
-                  initial={{ opacity: 0, x: 30, yPercent: -50, rotate: stackRotation + 15, scale: 0.9 }}
-                  animate={{ opacity: 0.6 + (deckPosition / totalInDeck) * 0.3, x: stackOffset, yPercent: -50, rotate: stackRotation, scale: 1 }}
+                  initial={{ opacity: 0, x: 30, y: "-50%", rotate: stackRotation + 15, scale: 0.9 }}
+                  animate={{ opacity: 0.6 + (deckPosition / totalInDeck) * 0.3, x: stackOffset, y: "-50%", rotate: stackRotation, scale: 1 }}
                   transition={{ 
                     type: "spring",
                     stiffness: 180,

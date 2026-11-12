@@ -6,13 +6,13 @@ import { useReducedMotion, useAnimation, animate, motion, AnimatePresence } from
 import { EngineeringDomain, PortfolioProject, portfolioIdentity, projects, stackDomains } from "@/data/portfolioContent";
 import { useRole } from "@/context/RoleContext";
 
-type Props = { onExplore: () => void; onTechnology: (domain: EngineeringDomain, index?: number) => void; onProject: (project: PortfolioProject) => void; isCaseStudyOpen: boolean; };
+type Props = { onExplore: () => void; onTechnology: (domain: EngineeringDomain, index?: number) => void; onProject: (project: PortfolioProject) => void; isCaseStudyOpen: boolean; theme: "dark" | "light"; };
 const cyclicDistance = (index: number, active: number, total: number) => {
   const distance = (index - active + total) % total;
   return distance > total / 2 ? distance - total : distance;
 };
 
-export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCaseStudyOpen }: Props) {
+export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCaseStudyOpen, theme }: Props) {
   const shelf = useRef<HTMLDivElement>(null);
   const frame = useRef<number | undefined>(undefined);
   const pointer = useRef({ x: 0, y: 0 });
@@ -140,12 +140,19 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
     };
     type Puff = { x: number; y: number; vx: number; vy: number; age: number; life: number; r: number; grow: number; a: number; tint: number; phase: number; freq: number; rot: number; spin: number };
 
-    const tints = [
-      [9, 20, 44],
-      [21, 88, 201],
-      [77, 141, 255],
-      [212, 255, 36],
-    ];
+    const tints = theme === "light"
+      ? [
+          [131, 204, 255],
+          [255, 166, 220],
+          [180, 169, 255],
+          [151, 231, 255],
+        ]
+      : [
+          [9, 20, 44],
+          [21, 88, 201],
+          [77, 141, 255],
+          [212, 255, 36],
+        ];
     const maxPuffs = 150;
     const spriteSize = 192;
 
@@ -508,7 +515,6 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
       paintBase();
     });
     resizeObserver.observe(h1);
-
     let cancelled = false;
     document.fonts.ready.then(() => {
       if (cancelled) return;
@@ -529,7 +535,7 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
       smokeBurst.current = null;
       puffs.length = 0;
     };
-  }, [reducedMotion]);
+  }, [reducedMotion, theme]);
 
   // 3D Flip Card Deck state
   const [flipDirection, setFlipDirection] = useState<"forward" | "backward" | null>(null);
@@ -565,7 +571,7 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
     <div className="hero-personal">
       <p className="hero-eyebrow">AI/ML ENGINEER @ <span style={{ color: 'var(--lime)' }}>3i Infotech</span></p>
       <div className="hero-meta">
-        <span className="meta-live">OPEN TO 2026 AI ROLES</span>
+        <span className="meta-live">OPEN TO AI/ML ENGINEERING ROLES</span>
         <span>APPLIED AI</span>
         <span>RAG / LLM SYSTEMS</span>
       </div>
@@ -582,9 +588,9 @@ export default function HeroWorkbench({ onExplore, onTechnology, onProject, isCa
         <canvas ref={smokeCanvasRef} className="hero-name-smoke-canvas" aria-hidden="true" />
       </h1>
       <p className="hero-role-line">AI / ML ENGINEER <i /> APPLIED AI SYSTEMS</p>
-      <h2>I learn by <span>building.</span></h2>
-      <p className="hero-manifesto">I build practical Python systems, machine learning models, and AI applications to understand how real software works.</p>
-      <p className="hero-support">From backend APIs and data workflows to explainable ML and LLM-powered applications, I turn ideas into working systems.</p>
+      <h2>I engineer AI systems that <span>actually work.</span></h2>
+      <p className="hero-manifesto">Building intelligent applications, ML workflows, and production-minded AI systems using Python, modern AI frameworks, and backend technologies.</p>
+      <p className="hero-support">From explainable ML and RAG pipelines to LLM-powered applications and Python backend systems — I turn ideas into working software.</p>
       <div className="hero-buttons"><button onClick={onExplore} data-cursor-label="OPEN" className="hero-primary">EXPLORE MY WORK <ArrowDownRight size={18} /></button><a data-cursor-label="OPEN" href="/Meet_Chhugani_Resume.pdf" download="Meet_Chhugani_Resume.pdf" className="hero-secondary">DOWNLOAD RESUME <Download size={14} /></a></div>
       <div className="hero-links"><a href={portfolioIdentity.github} target="_blank" rel="noopener noreferrer"><Github size={16} />GitHub</a><a href={portfolioIdentity.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={16} />LinkedIn</a><a href={`mailto:${portfolioIdentity.email}`}><Mail size={16} />Email</a></div>
       <div className="hero-metrics" aria-label="Selected engineering metrics">

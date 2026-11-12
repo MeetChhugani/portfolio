@@ -10,8 +10,6 @@
   --hair: rgba(255, 255, 255, 0.09);
   position: relative;
   width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
   color: var(--text);
   color-scheme: dark;
   font-family: var(--font-body), "Inter", sans-serif;

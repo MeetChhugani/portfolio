@@ -67,7 +67,7 @@ export const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative z-10 w-full max-w-4xl max-h-[88vh] bg-[#050a14] border border-[rgba(127,164,255,0.22)] rounded-2xl shadow-[0_50px_140px_rgba(0,0,0,0.75)] overflow-y-auto p-5 sm:p-6 md:p-8 font-sans"
+            className="relative z-10 w-full max-w-4xl max-h-[90vh] max-h-[calc(100vh-2rem)] bg-[#050a14] border border-[rgba(127,164,255,0.22)] rounded-2xl shadow-[0_50px_140px_rgba(0,0,0,0.75)] overflow-y-auto p-4 sm:p-5 md:p-6 lg:p-8 font-sans"
           >
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#d4ff24] via-[#1558c9] to-transparent" aria-hidden="true" />
 

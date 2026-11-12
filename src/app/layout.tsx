@@ -51,7 +51,14 @@ export const metadata: Metadata = {
     siteName: "Meet Chhugani Portfolio",
     locale: "en_US",
     type: "website",
-    images: ["https://meetchhugani.vercel.app/og-image.png"],
+    images: [
+      {
+        url: "https://meetchhugani.vercel.app/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Meet Chhugani - AI/ML Engineer Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -59,7 +66,7 @@ export const metadata: Metadata = {
     description:
       "AI Engineer building applied ML, RAG and LLM systems in Python — explainable models, evaluation and production inference.",
     creator: "@MeetChhugani",
-    images: ["https://meetchhugani.vercel.app/og-image.png"],
+    images: ["https://meetchhugani.vercel.app/og-image.svg"],
   },
 };
 

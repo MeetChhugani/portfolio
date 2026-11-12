@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#030407"/>
+  <rect x="60" y="60" width="1080" height="510" fill="none" stroke="#7fa9ff" stroke-width="1" stroke-dasharray="8,4" opacity="0.3"/>
+  <text x="600" y="220" font-family="Space Grotesk, sans-serif" font-size="48" font-weight="800" fill="#f4f7ff" text-anchor="middle" letter-spacing="-2">MEET CHHUGANI</text>
+  <text x="600" y="280" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="500" fill="#d4ff24" text-anchor="middle" letter-spacing="4">AI/ML ENGINEER</text>
+  <text x="600" y="330" font-family="JetBrains Mono, monospace" font-size="14" fill="#94a5c3" text-anchor="middle" letter-spacing="3">APPLIED ML · RAG / LLM · PYTHON BACKEND</text>
+  <rect x="400" y="380" width="400" height="3" fill="#d4ff24" opacity="0.6"/>
+  <text x="600" y="430" font-family="JetBrains Mono, monospace" font-size="12" fill="#7284a6" text-anchor="middle" letter-spacing="2">meetchhugani.vercel.app</text>
+  <circle cx="600" cy="520" r="40" fill="none" stroke="#d4ff24" stroke-width="2" opacity="0.4"/>
+  <text x="600" y="525" font-family="JetBrains Mono, monospace" font-size="10" fill="#7284a6" text-anchor="middle">2026</text>
+</svg>

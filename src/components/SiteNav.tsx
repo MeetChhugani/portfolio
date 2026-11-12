@@ -8,6 +8,8 @@ import {
   Download,
   Menu,
   Network as Linkedin,
+  Moon,
+  Sun,
   X,
 } from "lucide-react";
 import { portfolioIdentity } from "@/data/portfolioContent";
@@ -21,9 +23,11 @@ const LINKS = [
 
 interface SiteNavProps {
   onOpenPalette: () => void;
+  theme: "dark" | "light";
+  onToggleTheme: () => void;
 }
 
-export function SiteNav({ onOpenPalette }: SiteNavProps) {
+export function SiteNav({ onOpenPalette, theme, onToggleTheme }: SiteNavProps) {
   const reduced = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
@@ -158,6 +162,18 @@ export function SiteNav({ onOpenPalette }: SiteNavProps) {
           </nav>
 
           <div className="deck-actions">
+            <button
+              type="button"
+              className="deck-theme-toggle"
+              onClick={onToggleTheme}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              aria-pressed={theme === "light"}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            >
+              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+              <span>{theme === "dark" ? "LIGHT" : "DARK"}</span>
+            </button>
+
             <div className="deck-socials">
               <a
                 className="deck-icon"

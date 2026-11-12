@@ -409,6 +409,7 @@ export function ProjectRoom({ projects, onOpenCaseStudy, suspended = false }: Pr
                     style={{ "--i": index } as CSSProperties}
                     type="button"
                     onClick={() => openProject(index)}
+                    onTouchStart={() => {}}
                     onPointerMove={(event) => {
                       const rect = event.currentTarget.getBoundingClientRect();
                       event.currentTarget.style.setProperty("--mx", `${event.clientX - rect.left}px`);
